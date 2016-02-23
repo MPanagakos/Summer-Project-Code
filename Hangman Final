@@ -1,0 +1,186 @@
+Hangman Final Project
+import java.util.Random;
+import java.util.Scanner;
+public class Hangman {
+
+	public static void main(String[] args) {
+		int wrongGuess = 0;
+		int correctGuess= 0;
+		String[] wordBank = new String[50];
+		wordBank[0]="watermelon";
+		wordBank[1]="explosion";
+		wordBank[2]="carrier";
+		wordBank[3]="tank";
+		wordBank[4]="greece";
+		wordBank[5]="octopus";
+		wordBank[6]="computer";
+		wordBank[7]="flight";
+		wordBank[8]="electricty";
+		wordBank[9]="index";
+		wordBank[10]="method";
+		wordBank[11]="mountain";
+		wordBank[12]="java";
+		wordBank[13]="automobile";
+		wordBank[14]="syntax";
+		wordBank[15]="house";
+		wordBank[16]="campus";
+		wordBank[17]="character";
+		wordBank[18]="arrays";
+		wordBank[19]="random";
+		wordBank[20]="apple";
+		wordBank[21]="orange";
+		wordBank[22]="spaceship";
+		wordBank[23]="pyramid";
+		wordBank[24]="princeton";
+		wordBank[25]="edible";
+		wordBank[26]="hangman";
+		wordBank[27]="capital";
+		wordBank[28]="government";
+		wordBank[29]="senate";
+		wordBank[30]="democrats";
+		wordBank[31]="republicans";
+		wordBank[32]="afternoon";
+		wordBank[33]="morning";
+		wordBank[34]="airplane";
+		wordBank[35]="university";
+		wordBank[36]="school";
+		wordBank[37]="zookeeper";
+		wordBank[38]="america";
+		wordBank[39]="europe";
+		wordBank[40]="banana";
+		wordBank[41]="vuvuzela";
+		wordBank[42]="robot";
+		wordBank[43]="programming";
+		wordBank[44]="eclipse";
+		wordBank[45]="valley";
+		wordBank[46]="personal";
+		wordBank[47]="macbook";
+		wordBank[48]="junior";
+		wordBank[49]="senior";
+		
+		Scanner input = new Scanner(System.in);//no
+		Random randGene = new Random();//no
+		int index = 0;
+		int theWord = randGene.nextInt(wordBank.length);//no
+		String answer = wordBank[theWord];// no
+		
+		int anNum =answer.length();//no
+	
+		System.out.println("Would you like to play Hangman?");//no 
+		System.out.println("The two rules are-");
+		System.out.println("1.You can't repeat letters.");
+		System.out.println("2.You have a max of 6 wrong guesses.");
+		String playQuest =input.nextLine();
+		if(playQuest.equalsIgnoreCase("Yes")){
+			System.out.println("Great lets begin.");
+		}
+		else{
+			System.out.println("Too bad your playing anyway.");
+			}//no
+		
+		char[] choiceBank = new char[26];
+		
+		
+		char[] answerBank = answer.toCharArray();//no
+		String[] blankBank = new String[anNum];//no
+		for(int p=0; p < 26; p++ ){
+			
+		
+		}
+		
+		for(int b=0; b < anNum; b++){
+			blankBank[b] = " _ ";
+		}	//no
+		// Beginning do not while loop
+		for(int i=0; i < anNum; i++){
+			if( i == (anNum - 1)){
+			System.out.println(" _ ");
+			}
+			else{
+				System.out.print(" _ ");
+
+			}
+		}
+		while(correctGuess != anNum ){//WHILE Loop STARTS HERE *****************
+			if( wrongGuess == 6){
+				break;
+			}
+			boolean isCorrect = false;
+			System.out.println("\n");	
+		System.out.println("Guess a letter.");
+		char guess =input.next().charAt(0);//INPUT HERE
+		//Stop repeating guesses
+		for(int l=0; l<choiceBank.length;l++){//repeating error here ********
+			if(choiceBank[l] == (guess)){
+				
+			}
+			else{
+				choiceBank[index]=guess;
+				index++;
+				for(int v=0; v < anNum; v++ ){
+					if(guess == answerBank[v] ){
+						correctGuess++;
+						
+						blankBank[v]=guess + "";
+						isCorrect=true;
+								
+					}
+					
+				}
+				
+				
+				if(isCorrect==false){
+					System.out.println("That letter is not used.");
+				wrongGuess++;	
+					System.out.println("Your now have " +wrongGuess+ " wrong guess(es).");
+					for( int f=0; f<anNum; f++ ){
+						System.out.print(blankBank[f]);
+						
+					}
+				}
+			
+				else {
+					System.out.print("Good job you got a correct letter."+"\n");
+					
+					for( int f=0; f<anNum; f++ ){
+				System.out.print(blankBank[f]);
+				
+				
+			}
+					
+				}
+				
+			}
+			break;
+			}
+			
+		}
+		//Guess Code above ^^^^^^^
+		
+		
+		
+		if(correctGuess==anNum){
+			System.out.println("               ");
+			System.out.println("\n*****************************************");
+			System.out.println("****************You Won******************");
+			System.out.println("*****************************************");
+			
+		}
+		else if(wrongGuess == 6){
+			System.out.println("            ");
+			System.out.println("\n******************************************");
+			System.out.println("****************You Lost******************");
+			System.out.println("******************************************");
+			System.out.println("            ");
+			System.out.println("The correct word was " + answer);
+		}
+	
+		
+		
+			
+		
+	
+input.close();
+	}
+
+}
