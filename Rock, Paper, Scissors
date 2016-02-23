@@ -1,0 +1,62 @@
+Rock Paper Scissors
+import java.util.Scanner;
+import java.util.Random;
+public class rockpaperscis {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+		Random randomGenerator = new Random();
+		int comGuess = randomGenerator.nextInt(2)+1;
+		System.out.println("Rock, Paper, or Scissors");
+		String perGuess = input.nextLine();
+		input.close();
+		if(perGuess.equalsIgnoreCase("Rock")){
+			
+				   if(comGuess == 1){
+					   System.out.println("They choose rock. It's a tie.");
+				   }
+				   else if(comGuess == 2){
+					   System.out.println("They choose paper. You lose.");
+				   }
+				   else{
+					   System.out.println("They choose Scissors. You win.");
+				   }
+		   
+		   
+		}
+		else if(perGuess.equalsIgnoreCase("Paper")){
+		
+			
+				if(comGuess == 1){
+					System.out.println("They choose rock. You win.");
+				}
+				else if(comGuess == 2){
+				   System.out.println("They choose paper. Its a tie.");
+				}
+				else{
+				   System.out.println("They choose Scissors. You Lose.");
+				}
+			
+		}
+		if(perGuess.equalsIgnoreCase("Scissors")){
+				if(comGuess == 1){
+				   System.out.println("They choose rock. You lose.");
+				}
+				else if(comGuess == 2){
+				   System.out.println("They choose paper. You win.");
+				}
+				else{
+				   System.out.println("They choose Scissors. It's a tie.");
+			   }
+		
+			
+			}
+
+		
+		
+		
+		
+	}
+
+}
