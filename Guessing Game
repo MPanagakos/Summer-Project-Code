@@ -1,0 +1,31 @@
+Guessing Game
+import java.util.Scanner;
+import java.util.Random;
+public class GuessingGame {
+
+	public static void main(String[] args) {
+		Random randomGenerator = new Random();
+		int number= randomGenerator.nextInt(10)+1; 
+		Scanner input= new Scanner(System.in);
+		System.out.println("Guess a number 1-10");
+		int guess = input.nextInt();
+		
+		while(guess != number){
+			if(guess < number){
+				System.out.println("Nope too low. Try Again.");
+			}
+			else{
+				System.out.println("Nope too High. Try Again.");
+				
+				
+			}
+			guess = input.nextInt();
+			
+			}
+		input.close();
+		System.out.println("Good Job.");
+			
+		}
+
+	}
+
