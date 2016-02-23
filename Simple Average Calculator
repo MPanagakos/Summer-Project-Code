@@ -1,0 +1,34 @@
+Average Calculator 
+import java.util.Scanner;
+public class Average {
+	static int[] grades = new int[5];
+	
+	public static void main(String[] args) {
+		System.out.println("Please enter your first grade");
+		Scanner gradeInput = new Scanner(System.in);
+		grades[0] = gradeInput.nextInt();
+		System.out.println("Please enter your second grade");
+		grades[1] = gradeInput.nextInt();
+		System.out.println("Please enter your third grade");
+		grades[2] = gradeInput.nextInt();
+		System.out.println("Please enter your fourth grade");
+		grades[3] = gradeInput.nextInt();
+		System.out.println("Please enter your fifth grade");
+		grades[4] = gradeInput.nextInt();
+		average(grades);
+		
+		
+		
+		
+
+	}
+	public static int average( int[] grades){
+		int averge= (grades[0]+grades[1]+grades[2]+grades[3]+grades[4])/5;
+		System.out.println(averge);
+		
+		return averge;
+	}
+	
+	
+
+}
