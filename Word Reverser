@@ -1,0 +1,26 @@
+Word Reverser
+package reveresal;
+
+import java.util.Scanner;
+public class reverseal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+		int i = 0;
+		System.out.println("Enter a word");
+		String entry = input.nextLine();
+		int entryNum = entry.length();
+		String[] entryBank = new String[entryNum];
+		for( i=0; i< entryNum; i++){
+			entryBank[i]=entry.charAt(i) + "";
+		}
+		for(int a=entryNum-1; a!=-1; a--){//a = 3 , only stops if 
+			System.out.print(entryBank[a]);
+		}
+		
+	input.close();
+
+	}
+
+}
